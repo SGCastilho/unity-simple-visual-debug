@@ -1,8 +1,7 @@
-using Core.Utilities;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Core.UI
+namespace SGC.VisualDebug
 {
     public sealed class UI_VisualDebug : MonoBehaviour
     {
@@ -29,14 +28,14 @@ namespace Core.UI
         [SerializeField] private Color warningLogColor = Color.yellow;
         [SerializeField] private Color errorLogColor = Color.red;
 
-        private int m_currentTextLogs;
-        private bool m_visualDebugHided;
+        private int _currentTextLogs;
+        private bool _visualDebugHided;
 
         private void Start() => SetupUserInterface();
 
         private void SetupUserInterface()
         {
-            HideCanvas(m_visualDebugHided);
+            HideCanvas(_visualDebugHided);
         }
 
         private void Update() => HideVisualDebug();
@@ -45,9 +44,9 @@ namespace Core.UI
         {
             if(Input.GetKeyDown(HIDE_KEYCODE))
             {
-                m_visualDebugHided = !m_visualDebugHided;
+                _visualDebugHided = !_visualDebugHided;
 
-                HideCanvas(m_visualDebugHided);
+                HideCanvas(_visualDebugHided);
             }
         }
 
@@ -146,20 +145,20 @@ namespace Core.UI
 
         private void IncrementScrollRect()
         {
-            if (m_currentTextLogs > MAX_TEXTLOG_TO_SCROLL)
+            if (_currentTextLogs > MAX_TEXTLOG_TO_SCROLL)
             {
                 logScrollRect.sizeDelta += SCROLLRECT_TO_ADD * Vector2.up;
             }
-            else { m_currentTextLogs++; }
+            else { _currentTextLogs++; }
         }
 
         private void DecreaseScrollRect()
         {
-            if (m_currentTextLogs > MAX_TEXTLOG_TO_SCROLL)
+            if (_currentTextLogs > MAX_TEXTLOG_TO_SCROLL)
             {
                 logScrollRect.sizeDelta -= SCROLLRECT_TO_ADD * Vector2.up;
             }
-            else { m_currentTextLogs--; }
+            else { _currentTextLogs--; }
         }
     }
 }

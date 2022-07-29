@@ -1,4 +1,4 @@
-namespace Core.Manager
+namespace SGC.VisualDebug
 {
     public static class VisualDebug
     {

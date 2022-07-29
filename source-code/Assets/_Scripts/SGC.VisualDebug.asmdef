@@ -1,0 +1,14 @@
+{
+    "name": "SGC.VisualDebug",
+    "rootNamespace": "SGC.VisualDebug",
+    "references": [],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,8 +1,6 @@
-using Core.UI;
-using Core.Manager;
 using UnityEngine;
 
-namespace Core.Event
+namespace SGC.VisualDebug
 {
     public sealed class VisualDebugLogEvent : MonoBehaviour
     {

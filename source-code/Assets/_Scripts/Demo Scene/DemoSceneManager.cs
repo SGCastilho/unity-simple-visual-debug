@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Core.Manager
+namespace SGC.VisualDebug
 {
     public sealed class DemoSceneManager : MonoBehaviour
     {
@@ -11,7 +11,7 @@ namespace Core.Manager
         private const KeyCode F5_HOTKEY = KeyCode.F5;
         private const KeyCode F7_HOTKEY = KeyCode.F7;
 
-        private const float m_logDuration = 4f;
+        private const float LOG_DURATION = 4f;
 
         private void Update() => DemoInputs();
 
@@ -34,17 +34,17 @@ namespace Core.Manager
 
             if (Input.GetKeyDown(F4_HOTKEY))
             {
-                VisualDebug.Log("Log With Seconds Message Example!", m_logDuration);
+                VisualDebug.Log("Log With Seconds Message Example!", LOG_DURATION);
             }
 
             if (Input.GetKeyDown(F5_HOTKEY))
             {
-                VisualDebug.LogWarning("Log Warning With Seconds Message Example!", m_logDuration);
+                VisualDebug.LogWarning("Log Warning With Seconds Message Example!", LOG_DURATION);
             }
 
             if (Input.GetKeyDown(F7_HOTKEY))
             {
-                VisualDebug.LogError("Log Error With Seconds Message Example!", m_logDuration);
+                VisualDebug.LogError("Log Error With Seconds Message Example!", LOG_DURATION);
             }
         }
     }

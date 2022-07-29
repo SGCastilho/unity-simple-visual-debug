@@ -1,23 +1,23 @@
 using System;
 using UnityEngine;
 
-namespace Core.Utilities
+namespace SGC.VisualDebug
 {
     public sealed class DestroyObjectOverTime : MonoBehaviour
     {
         public Action OnDestroy;
 
-        public float DestroyDuration { set => m_destroyDuration = value; }
+        public float DestroyDuration { set => _destroyDuration = value; }
 
-        private float m_destroyDuration;
-        private float m_currentDestroyDuration;
+        private float _destroyDuration;
+        private float _currentDestroyDuration;
 
         private void Update() => DestroyTimer();
 
         private void DestroyTimer()
         {
-            m_currentDestroyDuration += Time.deltaTime;
-            if (m_currentDestroyDuration >= m_destroyDuration)
+            _currentDestroyDuration += Time.deltaTime;
+            if (_currentDestroyDuration >= _destroyDuration)
             {
                 OnDestroy?.Invoke();
 
